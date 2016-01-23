@@ -28,6 +28,8 @@ public class CustomListener extends TestListenerAdapter {
     public void onTestSuccess(ITestResult testResult){
 
         System.out.println("Success : "+testResult.getName());
+
+        BrowserClass.driver.quit();
     }
 
 }
