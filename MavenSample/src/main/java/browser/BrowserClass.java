@@ -34,7 +34,7 @@ public class BrowserClass {
         driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS.SECONDS);
         driver.manage().window().maximize();
-        driver.navigate().to("https://www.google.com/");
+        driver.navigate().to("https://www.google.com");
         return PageFactory.initElements(driver, PageNavigation.class);
     }
 

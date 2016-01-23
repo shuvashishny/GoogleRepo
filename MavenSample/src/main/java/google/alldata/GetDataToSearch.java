@@ -7,10 +7,14 @@ import org.testng.annotations.DataProvider;
  */
 public class GetDataToSearch {
 
-    @DataProvider
-    public  Object[][] getData(){
+    @DataProvider(name="data")
+    public static Object[][] getData(){
 
         Object[][] data= new Object[3][1];
+
+        data[0][0]="dhaka";
+        data[1][0]="new york";
+        data[2][0]="london";
 
         return data;
 
