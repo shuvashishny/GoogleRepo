@@ -12,10 +12,11 @@ import org.testng.annotations.Test;
 public class HomePageTestSuite {
 
     @Test(dataProvider = "data",dataProviderClass = GetDataToSearch.class)
-    public void startTest( String city){
+    public void startTest( String city, String stringLink){
         BrowserClass.openBrowser()
                 .gotoHomePage()
-                .searchInGoogle(city);
+                .searchInGoogle(city)
+                .clickIfLinkPresent(stringLink);
 
     }
 }

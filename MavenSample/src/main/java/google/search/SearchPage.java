@@ -1,11 +1,57 @@
 package google.search;
 
+import browser.BrowserClass;
 import com.gargoylesoftware.htmlunit.ElementNotFoundException;
 import google.platform.CommonMethods;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.pagefactory.ByChained;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class SearchPage extends CommonMethods {
+
+    @FindBy(how= How.CSS, using="#pnnext>.csb.ch") private WebElement nextPage;
+    private By headerLinks=new ByChained(By.cssSelector(".r>a"));
+
+    WebDriver driver = BrowserClass.driver;
+
+    public SearchPage clickIfLinkPresent(  String linkName){
+
+        boolean next=true;
+        List<WebElement> allHeaderLinks= new ArrayList<>();
+
+        for(int i=1;i<=5;i++) {
+             allHeaderLinks= driver.findElements(headerLinks);
+
+            for (WebElement element : allHeaderLinks) {
+
+                if (element.getText().contains(linkName)) {
+                    element.click();
+                    next=false;
+                    break;
+                }
+            }
+
+            nextPage.click();
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            allHeaderLinks.clear();
+            if(next=false)
+                break;
+
+        }
+
+        return this;
+    }
 
 
 
