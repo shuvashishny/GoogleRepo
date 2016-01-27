@@ -1,10 +1,9 @@
 package google.homepage;
 
 
-import browser.BrowserClass;
+import browser.Browser;
 import google.alldata.GetDataToSearch;
 import listener.CustomListener;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -12,11 +11,11 @@ import org.testng.annotations.Test;
 public class HomePageTestSuite {
 
     @Test(dataProvider = "data",dataProviderClass = GetDataToSearch.class)
-    public void startTest( String city, String stringLink){
-        BrowserClass.openBrowser()
+    public void searchTest( String city, String stringLink){
+        Browser.openBrowser()
                 .gotoHomePage()
                 .searchInGoogle(city)
-                .clickIfLinkPresent(stringLink);
+                .verifyLinkPresentWithinFirstFivePages(stringLink);
 
     }
 }

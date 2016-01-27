@@ -12,11 +12,11 @@ public class GetDataToSearch {
 
         Object[][] data= new Object[2][2];
 
-        data[0][0]="dhaka";
-        data[0][1]="British";
+        data[0][0]="Dhaka";
+        data[0][1]="Dhaka Stock Exchange";
 
-        data[1][0]="new york";
-        data[1][1]="English";
+        data[1][0]="New York";
+        data[1][1]="New York State Education Department";
 
 
 

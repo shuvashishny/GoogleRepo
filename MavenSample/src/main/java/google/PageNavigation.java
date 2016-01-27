@@ -1,6 +1,6 @@
 package google;
 
-import browser.BrowserClass;
+import browser.Browser;
 import google.search.HomePage;
 import org.openqa.selenium.support.PageFactory;
 
@@ -16,6 +16,6 @@ public class PageNavigation {
 
     public HomePage gotoHomePage(){
 
-        return PageFactory.initElements(BrowserClass.driver,HomePage.class);
+        return PageFactory.initElements(Browser.driver,HomePage.class);
     }
 }

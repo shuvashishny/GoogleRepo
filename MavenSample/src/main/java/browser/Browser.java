@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by Shuvashish on 1/16/2016.
  */
-public class BrowserClass {
+public class Browser {
 
     public static WebDriver driver=null;
 

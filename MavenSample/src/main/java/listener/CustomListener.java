@@ -1,6 +1,6 @@
 package listener;
 
-import browser.BrowserClass;
+import browser.Browser;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -15,7 +15,7 @@ public class CustomListener extends TestListenerAdapter {
     public void onTestFailure(ITestResult testResult){
 
         System.out.println("failed");
-        File srcFile=((TakesScreenshot) BrowserClass.driver).getScreenshotAs(OutputType.FILE);
+        File srcFile=((TakesScreenshot) Browser.driver).getScreenshotAs(OutputType.FILE);
         try{
             FileUtils.copyFile(srcFile,new File("E:\\snapshot"+testResult.getName()+".jpg"));
         }catch (Exception e){
@@ -29,7 +29,7 @@ public class CustomListener extends TestListenerAdapter {
 
         System.out.println("Success : "+testResult.getName());
 
-        BrowserClass.driver.quit();
+        Browser.driver.quit();
     }
 
 }

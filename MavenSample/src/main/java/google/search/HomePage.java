@@ -1,6 +1,6 @@
 package google.search;
 
-import browser.BrowserClass;
+import browser.Browser;
 import google.platform.CommonMethods;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,7 +16,7 @@ public class HomePage extends CommonMethods {
     @FindBy(how= How.CLASS_NAME, using ="gsfi" )private WebElement searchText;
     @FindBy(how=How.CLASS_NAME, using="lsb") private WebElement searchSubmitBttn;
 
-    WebDriver driver= BrowserClass.driver;
+    WebDriver driver= Browser.driver;
 
     public SearchPage searchInGoogle (String text){
 
