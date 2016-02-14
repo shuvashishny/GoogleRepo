@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MavenSample.iml" filepath="$PROJECT_DIR$/MavenSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ZapposModule/ZapposModule.iml" filepath="$PROJECT_DIR$/ZapposModule/ZapposModule.iml" />
     </modules>
   </component>
 </project>

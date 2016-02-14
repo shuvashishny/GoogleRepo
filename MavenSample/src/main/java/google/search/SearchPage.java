@@ -8,7 +8,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.pagefactory.ByChained;
-import org.testng.Assert;
+import org.testng.*;
+
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +30,7 @@ public class SearchPage extends CommonMethods {
     public SearchPage clickIfLinkPresent(  String linkName){
 
         boolean next=true;
-        List<WebElement> allHeaderLinks= new ArrayList<>();
+        List<WebElement> allHeaderLinks= new ArrayList<WebElement>();
 
         for(int i=1;i<=5;i++) {
              allHeaderLinks= driver.findElements(headerLinks);
@@ -60,7 +62,7 @@ public class SearchPage extends CommonMethods {
     public SearchPage verifyLinkPresentWithinFirstFivePages(String linkName){
 
         boolean linkPresnt=false;
-        List<WebElement> allHeaderLinks= new ArrayList<>();
+        List<WebElement> allHeaderLinks;
 
         for(int i=1;i<=5;i++) {
             allHeaderLinks= driver.findElements(headerLinks);
@@ -77,6 +79,8 @@ public class SearchPage extends CommonMethods {
         }
 
         Assert.assertTrue(linkPresnt, String.format("%s Link should be presnt",linkName));
+
+
 
         return this;
     }

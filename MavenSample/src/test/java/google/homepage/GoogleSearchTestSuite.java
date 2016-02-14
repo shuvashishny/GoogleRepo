@@ -8,7 +8,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 @Listeners(value= CustomListener.class)
-public class HomePageTestSuite {
+public class GoogleSearchTestSuite {
 
     @Test(dataProvider = "data",dataProviderClass = GetDataToSearch.class)
     public void searchTest( String city, String stringLink){

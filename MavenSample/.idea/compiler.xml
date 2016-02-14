@@ -23,10 +23,12 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="MavenSample" />
+        <module name="ZapposModule" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="MavenSample" target="1.8" />
+      <module name="MavenSample" target="1.5" />
+      <module name="ZapposModule" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
