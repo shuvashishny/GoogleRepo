@@ -76,6 +76,8 @@ public class SearchPage extends CommonMethods {
             nextPage.click();
             hardWait(2);
             allHeaderLinks.clear();
+
+
         }
 
         Assert.assertTrue(linkPresnt, String.format("%s Link should be presnt",linkName));
