@@ -24,6 +24,8 @@ public class HomePage extends CommonMethods {
         searchText.sendKeys(text);
         searchSubmitBttn.click();
 
+        System.out.println("Shuvashish");
+
         return PageFactory.initElements(driver,SearchPage.class);
     }
 
